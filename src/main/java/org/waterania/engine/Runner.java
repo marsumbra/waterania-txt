@@ -4,15 +4,16 @@ import org.waterania.model.Location;
 
 public class Runner {
 
-    Location world[];
-
-    public void createWorld(){
-        this.world[0] = new Location();
+    public static Location[] createWorld(){
+        Location world[] = new Location[100];
+        world[0] = new Location(0,0,0,"Strange blue meadow");
+        return world;
     }
 
     public static void main(String[] args){
 
-        System.out.println("You wake up");
+        Location world[] = createWorld();
 
+        System.out.println("You wake up");
     }
 }
