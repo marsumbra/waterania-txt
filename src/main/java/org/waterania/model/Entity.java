@@ -5,5 +5,8 @@ public class Entity {
     int currentHP;
     String name;
     int id;
+    int x;
+    int y;
+    int z;
 
 }
