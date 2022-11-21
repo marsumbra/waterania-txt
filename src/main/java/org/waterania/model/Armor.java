@@ -1,8 +1,9 @@
 package org.waterania.model;
 
-public class Wepon extends Item {
-    int durability;
-    int damage;
+public class Armor extends Item {
+    int durabilyty;
+    int devecive;
     String craftsman;
     Item materials [];
+
 }
