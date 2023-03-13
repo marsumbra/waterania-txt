@@ -1,9 +1,13 @@
 package org.waterania.model;
 
 public class Armor extends Item {
-    int durabilyty;
-    int devecive;
-    String craftsman;
-    Item materials [];
+    public int durabilyty;
+    public int defence;
+public Armor(int id, int price, String name,int durability, int defence) {
+    super(id,price,name);
+    this.durabilyty = durability;
+    this.defence = defence;
+}
+
 
 }
