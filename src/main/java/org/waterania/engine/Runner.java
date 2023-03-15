@@ -3,7 +3,9 @@ package org.waterania.engine;
 import org.waterania.model.*;
 
 
-import java.util.Scanner;
+import java.util.*;
+
+import org.waterania.model.Race;
 
 public class Runner {
 
@@ -15,11 +17,22 @@ public class Runner {
         return world;
     }*/
 
+    static Map<String, Race> races = new HashMap<>();
+    static Map<String, AdventurerClass> classes = new HashMap<>();
+
     public static void main(String[] args){
 
         Location[][] world = WorldGenerator.generateMapLevel(0);
         System.out.println("You wake up");
-        Player player = new Player(100,100,"advencturer", 0,5,5,0, false,0,0);
+        Player player = new Player(100,100,"advencturer", 0,5,5,0, false,0,
+                0,1,1,1,1,1,1,1,1,1,1);
+
+
+        player = Runner.races.get("elf").modify(player);
+        player.assignClass(Runner.classes.get("knight"));
+
+        player.adventurerClass.proficientcies.get("sword");
+
         System.out.println(world[player.x][player.y].description);
         Scanner keyboard = new Scanner(System.in);
 
@@ -52,7 +65,21 @@ public class Runner {
 
     }
 
-    Item iron = new Item(002,1,"iron");
-    Weapon iron_sword = new Weapon(001,50,"iron_sword", 30,10,"blacksmith");
+    public void initiate() {
+        Item iron = new Item(002,1,"iron");
+        Weapon iron_sword = new Weapon(001,50,"iron_sword", 30,10,"blacksmith",WeaponTypes.sword);
+
+        Runner.races.put("elf",new Race("elf",20,20,"Elf", 0,0,0,0,false,0,
+                2,0,0,0,1,0,0,0,1));
+        Runner.races.put("human",new Race("human",25,25,"Human", 1,0,0,0,false,0,
+                0,0,0,0,0,2,2,1,0));
+
+        Map<WeaponTypes, Integer> knighProficientcies = new HashMap<>();
+        knighProficientcies.put(WeaponTypes.sword,1);
+
+        Runner.classes.put("knight",new AdventurerClass(knighProficientcies, null));
+    }
+
+
 
 }
