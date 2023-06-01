@@ -21,6 +21,7 @@ public class Entity {
     public int spirit;
     public int morale;
     public int charisma;
+    public int xp;
 
     boolean evil;
     Armor armor;
@@ -28,7 +29,7 @@ public class Entity {
     List<Item> inventory = new ArrayList();
     public Entity(int maxHP, int currentHP, String name, int id, int x, int y, int z, boolean evil, int strength,
                   int agility, int body, int reaction, int constitution, int wisdom, int intelligence, int spirit,
-                  int morale, int charisma) {
+                  int morale, int charisma,int xp) {
         this.maxHP = maxHP;
         this.currentHP = currentHP;
         this.name = name;
@@ -47,5 +48,7 @@ public class Entity {
         this.spirit=spirit;
         this.morale=morale;
         this.charisma=charisma;
+        this.xp = xp;
+
     }
 }

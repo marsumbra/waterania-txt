@@ -67,17 +67,18 @@ public class Runner {
 
     public void initiate() {
         Item iron = new Item(002,1,"iron");
-        Weapon iron_sword = new Weapon(001,50,"iron_sword", 30,10,"blacksmith",WeaponTypes.sword);
+        Weapon iron_sword = new Weapon(001,50,"iron_sword", 30,10,"blacksmith",
+                WeaponTypes.sword);
 
-        Runner.races.put("elf",new Race("elf",20,20,"Elf", 0,0,0,0,false,0,
-                2,0,0,0,1,0,0,0,1));
-        Runner.races.put("human",new Race("human",25,25,"Human", 1,0,0,0,false,0,
-                0,0,0,0,0,2,2,1,0));
+        Runner.races.put("woodHunan",new Race("WoodHuman",0,0, "woodHuman",001,null,
+                null, null, false,2, 0,0,0,0,0,0,2,
+                0,0,0));
 
         Map<WeaponTypes, Integer> knighProficientcies = new HashMap<>();
         knighProficientcies.put(WeaponTypes.sword,1);
 
         Runner.classes.put("knight",new AdventurerClass(knighProficientcies, null));
+
     }
 
 
